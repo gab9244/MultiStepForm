@@ -1,69 +1,112 @@
-:root {
-  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
-  line-height: 1.5;
-  font-weight: 400;
 
-  color-scheme: light dark;
-  color: rgba(255, 255, 255, 0.87);
-  background-color: #242424;
-
-  font-synthesis: none;
-  text-rendering: optimizeLegibility;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  -webkit-text-size-adjust: 100%;
+*{
+    padding: 0;
+    margin: 0;
+}
+:root{
+    --Marine-blue: hsl(213, 96%, 18%);
+    --Purplish-blue: hsl(243, 100%, 62%);
+    --Pastel-blue: hsl(228, 100%, 84%);
+    --Light-blue: hsl(206, 94%, 87%);
+    --Strawberry-red: hsl(354, 84%, 57%);
 }
 
-a {
-  font-weight: 500;
-  color: #646cff;
-  text-decoration: inherit;
-}
-a:hover {
-  color: #535bf2;
+@font-face {
+    font-family: 'Bold Ubuntu';
+    src: url(/multi-step-form-main/assets/fonts/Ubuntu-Bold.ttf);
+    font-weight:  700;
 }
 
-body {
-  margin: 0;
-  display: flex;
-  place-items: center;
-  min-width: 320px;
-  min-height: 100vh;
+@font-face {
+    font-family: 'Medium Ubuntu';
+    src: url(/multi-step-form-main/assets/fonts/Ubuntu-Regular.ttf);
+    font-weight:500;
+}
+@font-face {
+    font-family: 'Regular Ubuntu';
+    src: url(/multi-step-form-main/assets/fonts/Ubuntu-Regular.ttf);
+    font-weight: 400;
 }
 
-h1 {
-  font-size: 3.2em;
-  line-height: 1.1;
-}
 
-button {
-  border-radius: 8px;
-  border: 1px solid transparent;
-  padding: 0.6em 1.2em;
-  font-size: 1em;
-  font-weight: 500;
-  font-family: inherit;
-  background-color: #1a1a1a;
-  cursor: pointer;
-  transition: border-color 0.25s;
-}
-button:hover {
-  border-color: #646cff;
-}
-button:focus,
-button:focus-visible {
-  outline: 4px auto -webkit-focus-ring-color;
-}
+body{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    width: 100vw;
+    height: 100vh;  
+    font-family: 'Regular Ubuntu';
+    background-color: var(--Light-blue);
 
-@media (prefers-color-scheme: light) {
-  :root {
-    color: #213547;
-    background-color: #ffffff;
-  }
-  a:hover {
-    color: #747bff;
-  }
-  button {
-    background-color: #f9f9f9;
-  }
+
+}
+main {
+    display: flex;
+    width: 50vw;
+    margin-top: 100px;
+    background-color: white;
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: rgba(17, 12, 46, 0.15) 0px 48px 100px 0px;
+}
+.sidebar{
+    position: relative;
+}
+.steps{
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    top: 15%;
+    align-items: stretch;
+    margin-left: 30px;
+    color: white;
+   
+}
+ .buttons {
+    width: 40px;
+    height: 40px;
+    border-radius: 100%;
+    margin-right: 10px;
+    color: white;
+    background-color: transparent;
+    border-color: white;
+    transition: 0.4s;
+}
+.buttons:active{
+    background-color: aqua;
+    color: black;
+}
+.step {
+    display: flex;
+    height: 70px;
+    margin: 10px;
+    
+}
+.stepText {
+    display: flex;
+    flex-direction: column;
+    font-size: 20px;
+    font-family: 'Regular Ubuntu';
+}
+.stepStage{
+    font-size: 14px;
+
+}
+.NextStep{
+    margin-left: 83%;
+    margin-top: 100px;
+    width: 130px;
+    height: 40px;
+    border-radius: 10px;
+    border: none;
+    background-color: var(--Purplish-blue);
+    color: white;
+    font-family: 'Bold Ubuntu';
+}
+a{
+    text-decoration: none;
+    color: black;
+    font-size: 18px;
+    font-family: 'Bold Ubuntu';
 }
