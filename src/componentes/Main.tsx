@@ -1,120 +1,161 @@
-import { Info } from "./Info"
+import { Info } from "./Info";
+import { Plain } from "./Plain";
+import { PickAddOns } from "./PickAddOns";
+import { FinishingUp } from "./FinishingUp";
+import { ThankYou } from "./ThankYou";
 export const Main = () => {
-  return (
+  function OnDisplay() {
+    const InfoSection = document.querySelector(".InfoSection");
+    const SelectPlan = document.querySelector(".SelectPlan");
+    const pickadds = document.querySelector(".pickadds");
+    const Finishing = document.querySelector(".Finishing");
 
+    const stepOneBtn = document.querySelector(".buttonOne");
+    const stepTwoBtn = document.querySelector(".buttonTwo");
+    const stepThreeBtn = document.querySelector(".buttonThree");
+    const stepFourBtn = document.querySelector(".buttonFour");
+
+    if (InfoSection?.classList.contains("OnDisplay")) {
+      stepOneBtn?.classList.add("Actived");
+      stepTwoBtn?.classList.remove("Actived");
+      stepThreeBtn?.classList.remove("Actived");
+      stepFourBtn?.classList.remove("Actived");
+    }
+    if (SelectPlan?.classList.contains("OnDisplay")) {
+      stepOneBtn?.classList.remove("Actived");
+      stepTwoBtn?.classList.add("Actived");
+      stepThreeBtn?.classList.remove("Actived");
+      stepFourBtn?.classList.remove("Actived");
+    }
+
+    if (pickadds?.classList.contains("OnDisplay")) {
+      stepOneBtn?.classList.remove("Actived");
+      stepTwoBtn?.classList.remove("Actived");
+      stepThreeBtn?.classList.add("Actived");
+      stepFourBtn?.classList.remove("Actived");
+    }
+    if (Finishing?.classList.contains("OnDisplay")) {
+      stepOneBtn?.classList.remove("Actived");
+      stepTwoBtn?.classList.remove("Actived");
+      stepThreeBtn?.classList.remove("Actived");
+      stepFourBtn?.classList.add("Actived");
+    }
+  }
+
+  const SelectPage = () => {
+    const InfoSection = document.querySelector(".InfoSection");
+    const SelectPlan = document.querySelector(".SelectPlan");
+    const pickadds = document.querySelector(".pickadds");
+    const Finishing = document.querySelector(".Finishing");
+
+    const stepOneBtn = document.querySelector(".buttonOne");
+    const stepTwoBtn = document.querySelector(".buttonTwo");
+    const stepThreeBtn = document.querySelector(".buttonThree");
+    const stepFourBtn = document.querySelector(".buttonFour");
+
+    stepOneBtn?.addEventListener("click", () => {
+      InfoSection?.classList.remove("OffDisplay");
+      SelectPlan?.classList.add("OffDisplay");
+      pickadds?.classList.add("OffDisplay");
+      Finishing?.classList.add("OffDisplay");
+      stepOneBtn?.classList.add("Actived");
+      stepTwoBtn?.classList.remove("Actived");
+      stepThreeBtn?.classList.remove("Actived");
+      stepFourBtn?.classList.remove("Actived");
+    });
+
+    stepTwoBtn?.addEventListener("click", () => {
+      InfoSection?.classList.add("OffDisplay");
+      SelectPlan?.classList.remove("OffDisplay");
+      pickadds?.classList.add("OffDisplay");
+      Finishing?.classList.add("OffDisplay");
+
+      stepOneBtn?.classList.remove("Actived");
+      stepTwoBtn?.classList.add("Actived");
+      stepThreeBtn?.classList.remove("Actived");
+      stepFourBtn?.classList.remove("Actived");
+    });
+
+    stepThreeBtn?.addEventListener("click", () => {
+      InfoSection?.classList.add("OffDisplay");
+      SelectPlan?.classList.add("OffDisplay");
+      pickadds?.classList.remove("OffDisplay");
+      Finishing?.classList.add("OffDisplay");
+
+      stepOneBtn?.classList.remove("Actived");
+      stepTwoBtn?.classList.remove("Actived");
+      stepThreeBtn?.classList.add("Actived");
+      stepFourBtn?.classList.remove("Actived");
+    });
+
+    stepFourBtn?.addEventListener("click", () => {
+      InfoSection?.classList.add("OffDisplay");
+      SelectPlan?.classList.add("OffDisplay");
+      pickadds?.classList.add("OffDisplay");
+      Finishing?.classList.remove("OffDisplay");
+
+      stepOneBtn?.classList.remove("Actived");
+      stepTwoBtn?.classList.remove("Actived");
+      stepThreeBtn?.classList.remove("Actived");
+      stepFourBtn?.classList.add("Actived");
+    });
+  };
+
+  
+  OnDisplay();
+
+  return (
     <main>
-      <img src="/bg-sidebar-desktop.svg" alt="A site bar" className="sidebar"/>
-      <div className="steps">
-        <div className="step"> <button className="buttons" >1</button> <div className="stepText"><div className="stepStage">Step 1 </div>Your info</div></div>
-        <div className="step"> <button className="buttons" >2</button> <div className="stepText"><div className="stepStage">Step 2 </div>Select plan</div></div>
-        <div className="step"> <button className="buttons" >3</button> <div className="stepText"><div className="stepStage">Step 3</div> Add-ons</div></div>
-        <div className="step"> <button className="buttons" >4</button> <div className="stepText"><div className="stepStage">Step 4</div> Summary</div></div>
+      <div className="sidebar">
+        <img 
+          src="/bg-sidebar-desktop.svg"
+          alt="A site bar"
+          className="sidebar  deleteOnSize"
+        />
+        <div className="steps">
+          <div className="step">
+            {" "}
+            <button className="buttons buttonOne  Actived" onClick={SelectPage}>
+              1
+            </button>{" "}
+            <div className="stepText">
+              <div className="stepStage"><span className="deleteOnSize">Step 1</span> </div><span className="deleteOnSize">Your info</span>
+            </div>
+          </div>
+          <div className="step">
+            {" "}
+            <button className="buttons  buttonTwo" onClick={SelectPage}>
+              2
+            </button>{" "}
+            <div className="stepText">
+              <div className="stepStage"><span  className="deleteOnSize">Step 2 </span></div><span className="deleteOnSize">Select plan</span>
+            </div>
+          </div>
+          <div className="step">
+            {" "}
+            <button className="buttons buttonThree" onClick={SelectPage}>
+              3
+            </button>{" "}
+            <div className="stepText">
+              <div className="stepStage"><span className="deleteOnSize">Step 3</span></div> <span className="deleteOnSize"> Add-ons</span>
+            </div>
+          </div>
+          <div className="step">
+            {" "}
+            <button className="buttons buttonFour" onClick={SelectPage}>
+              4
+            </button>{" "}
+            <div className="stepText">
+              <div className="stepStage"><span className="deleteOnSize">Step 4</span></div> <span className="deleteOnSize">Summary</span>
+            </div>
+          </div>
+        </div>
       </div>
       <Info />
-      </main>
-  )
-
-
-}
-
-
-
-// <!-- Sidebar start -->
-
-// Step 1
-// Your info
-
-// Step 2
-// Select plan
-
-// Step 3
-// Add-ons
-
-// Step 4
-// Summary
-
-// <!-- Sidebar end -->
-
-// <!-- Step 1 start -->
-
-// Personal info
-// Please provide your name, email address, and phone number.
-
-// Name
-// e.g. Stephen King
-
-// Email Address
-// e.g. stephenking@lorem.com
-
-// Phone Number
-// e.g. +1 234 567 890
-
-// Next Step
-
-// <!-- Step 1 end -->
-
-// <!-- Step 2 start -->
-
-// Select your plan
-// You have the option of monthly or yearly billing.
-
-// Arcade
-// $9/mo
-
-// Advanced
-// $12/mo
-
-// Pro
-// $15/mo
-
-// Monthly
-// Yearly
-
-// Go Back
-// Next Step
-
-// <!-- Step 2 end -->
-
-// <!-- Step 3 start -->
-
-// Pick add-ons
-// Add-ons help enhance your gaming experience.
-
-// Online service
-// Access to multiplayer games
-// +$1/mo
-
-// Larger storage
-// Extra 1TB of cloud save
-// +$2/mo
-
-// Customizable Profile
-// Custom theme on your profile
-// +$2/mo
-
-// Go Back
-// Next Step
-
-// <!-- Step 3 end -->
-
-// <!-- Step 4 start -->
-
-// Finishing up
-// Double-check everything looks OK before confirming.
-
-// <!-- Dynamically add subscription and add-on selections here -->
-
-// Total (per month/year)
-
-// Go Back
-// Confirm
-
-// <!-- Step 4 end -->
-
-// <!-- Step 5 start -->
-
-// Thank you!
-
-// Thanks for confirming your subscription! We hope you have fun 
-// using our platform. If you ever need support, please feel free 
-// to email us at support@loremgaming.com.
+      <Plain />
+      <PickAddOns />
+      <FinishingUp />
+      <ThankYou />
+    </main>
+  );
+};

@@ -3,7 +3,11 @@ import ReactDOM from 'react-dom/client'
 import App from './App.tsx'
 import './index.css'
 import './componentes/SectionStyle.css'
-
+import './componentes/PlainStyle.css'
+import './componentes/Form.css'
+import './componentes/PickAddOns.css'
+import './componentes/FinishingUp.css'
+import './componentes/ThankYou.css'
 ReactDOM.createRoot(document.getElementById('root')!).render(
   <React.StrictMode>
     <App />

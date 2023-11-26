@@ -52,6 +52,7 @@ main {
 }
 .sidebar{
     position: relative;
+    
 }
 .steps{
     display: flex;
@@ -73,7 +74,9 @@ main {
     border-color: white;
     transition: 0.4s;
 }
-.buttons:active{
+
+
+.Actived{
     background-color: aqua;
     color: black;
 }
@@ -94,8 +97,7 @@ main {
 
 }
 .NextStep{
-    margin-left: 83%;
-    margin-top: 100px;
+   
     width: 130px;
     height: 40px;
     border-radius: 10px;
@@ -104,9 +106,88 @@ main {
     color: white;
     font-family: 'Bold Ubuntu';
 }
+.first {
+    margin-left: 80%;
+    margin-top: 100px;
+}
+.OnDisplay {
+    display: flex;
+    flex-direction: column;
+}
+
+.OffDisplay {
+    display: none;
+}
 a{
     text-decoration: none;
     color: black;
     font-size: 18px;
     font-family: 'Bold Ubuntu';
+}
+
+@media (max-width:768px) {
+    body {
+        overflow: hidden;
+    }
+  
+   main {
+    align-items: flex-start;
+    display: flex;
+    flex-direction: column;
+    position: relative  ;
+    max-width: 1050px;
+    min-height: 100vh;
+    width: 100vw;
+    height: 100vh;
+    margin: 0;
+    padding: 0;
+    background-color: var(--Pastel-blue);
+   }
+
+  
+   .sidebar{
+    border-radius: 0;
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    background-image: url(https://multistep-form-23.netlify.app/assets/images/bg-sidebar-mobile.svg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 200px;
+    width: 100%;
+    position: relative;
+    
+
+   }
+   
+
+   section {
+    display: flex;
+    align-items: flex-start;
+    margin-bottom: 300px;
+    margin: 0;
+    position: absolute;
+    top: 7%;
+    background-color: white;
+    padding: 20px;
+    border-radius: 10px;
+   }
+   .steps {
+    border-radius: 0;
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    flex-direction: row;
+   }
+   .step {
+    display: flex;
+   
+    }
+
+    .deleteOnSize{
+        display: none;
+    }
+    .first{
+        margin-left: 70%;
+    }
 }
