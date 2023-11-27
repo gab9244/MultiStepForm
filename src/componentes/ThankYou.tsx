@@ -2,7 +2,7 @@ export const ThankYou = () => {
   return (
     <section className="ThankYoursection OffDisplay">
       <div className="ThankYour">
-        <img src="/icon-thank-you.svg" alt="" />
+        <img src="/MultiStepForm/icon-thank-you.svg" alt="" />
         <h1>Thank You!</h1>
         <p>
           Thanks for confirming your subscription! We hope you have fun using
