@@ -108,7 +108,7 @@ export const Main = () => {
     <main>
       <div className="sidebar">
         <img 
-          src="/bg-sidebar-desktop.svg"
+          src="MultiStepForm/bg-sidebar-desktop.svg"
           alt="A site bar"
           className="sidebar  deleteOnSize"
         />
