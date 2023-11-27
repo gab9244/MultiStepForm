@@ -15,9 +15,16 @@ export const FinishingUp = () => {
 
   const Confirm = ()=>{
     const ThankYoursection = document.querySelector(".ThankYoursection")
+    const buttons = document.querySelectorAll(".buttons")
     const Finishing = document.querySelector(".Finishing");
     ThankYoursection?.classList.remove("OffDisplay")
     Finishing?.classList.add("OffDisplay");
+
+    buttons.forEach((button) =>{
+      button.setAttribute("disabled", "true")
+    })
+
+
 
   }
 
