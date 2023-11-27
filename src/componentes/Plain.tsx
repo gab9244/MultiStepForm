@@ -160,21 +160,21 @@ export const Plain = () => {
       </p>
       <div className="Options">
         <div className="Option arcade" onClick={arcadeFunction}>
-          <img src="/icon-arcade.svg" alt="" />
+          <img src="/MultiStepForm/icon-arcade.svg" alt="" />
           <div>
             <p className="OptionTitle">Arcade</p>
             <p className="OptionValue  ArcadeOptionValue">+$9/mo</p>
           </div>
         </div>
         <div className="Option advanced" onClick={advancedFunction}>
-          <img src="/icon-advanced.svg" alt="" />
+          <img src="/MultiStepForm/icon-advanced.svg" alt="" />
           <div>
             <p className="OptionTitle">Advanced</p>
             <p className="OptionValue  AdvancedOptionValue">+$12/mo</p>
           </div>
         </div>
         <div className="Option pro" onClick={proFunction}>
-          <img src="/icon-pro.svg" alt="" />
+          <img src="/MultiStepForm/icon-pro.svg" alt="" />
           <div>
             <p className="OptionTitle">Pro</p>
             <p className="OptionValue  ProOptionValue">+$15/mo</p>
